@@ -1,17 +1,14 @@
 import { useEvent } from 'expo';
-import ExpoQQ, { ExpoQQView } from 'expo-qq';
+import ExpoQQ from 'expo-qq';
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
-  const onChangePayload = useEvent(ExpoQQ, 'onChange');
+  const onChangePayload = useEvent(ExpoQQ, 'onLoginSucceed');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Module API Example</Text>
-        <Group name="Constants">
-          <Text>{ExpoQQ.PI}</Text>
-        </Group>
         <Group name="Functions">
           <Text>{ExpoQQ.hello()}</Text>
         </Group>
@@ -24,14 +21,7 @@ export default function App() {
           />
         </Group>
         <Group name="Events">
-          <Text>{onChangePayload?.value}</Text>
-        </Group>
-        <Group name="Views">
-          <ExpoQQView
-            url="https://www.example.com"
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
-            style={styles.view}
-          />
+          <Text>{onChangePayload?.openId}</Text>
         </Group>
       </ScrollView>
     </SafeAreaView>

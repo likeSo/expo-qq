@@ -19,11 +19,29 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
+  
+#  s.vendored_frameworks = 'Frameworks/*.framework'
+#  s.frameworks = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony'
+#  s.libraries = 'iconv', 'sqlite3', 'stdc++', 'z'
+#  
+#  s.pod_target_xcconfig = {
+#    'HEADER_SEARCH_PATHS' => '"$(inherited)" "${PODS_TARGET_SRCROOT}/Frameworks/TencentOpenAPI.framework/Headers"',
+#    'FRAMEWORK_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}/Frameworks"',
+#    'DEFINES_MODULE' => 'YES',
+#    'CLANG_ENABLE_MODULES' => 'YES',
+#  }
 
-  # Swift/Objective-C compatibility
+  s.vendored_frameworks = 'Frameworks/*.xcframework'
+  s.frameworks = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony'
+  s.libraries = 'iconv', 'sqlite3', 'stdc++', 'z'
+
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
+    'CLANG_ENABLE_MODULES' => 'YES',
   }
-
-  s.source_files = "**/*.{h,m,mm,swift,hpp,cpp}"
+  s.source_files = "Classes/**/*.{h,m,mm,swift,hpp,cpp}"
+  
+  
 end
+
+#    'HEADER_SEARCH_PATHS' => '"$(inherited)" "${PODS_TARGET_SRCROOT}/Framework/TencentOpenAPI.xcframework/ios-arm64_armv7/TencentOpenAPI.framework/Headers" "${PODS_TARGET_SRCROOT}/Framework/TencentOpenAPI.xcframework/ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers"',
