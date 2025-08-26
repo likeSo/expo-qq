@@ -1,6 +1,6 @@
 import { NativeModule, requireNativeModule } from "expo";
 
-import { ExpoQQModuleEvents, LoginAccessTokenInfo, LoginPermissions, ShareContentOptions, ShareVideoOptions } from "./ExpoQQ.types";
+import { ExpoQQModuleEvents, LoginAccessTokenInfo, LoginPermissions, ShareContentOptions } from "./ExpoQQ.types";
 
 declare class ExpoQQModule extends NativeModule<ExpoQQModuleEvents> {
   /**
