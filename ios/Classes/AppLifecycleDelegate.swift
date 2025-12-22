@@ -14,7 +14,7 @@ public class AppLifecycleDelegate: ExpoAppDelegateSubscriber {
         if TencentOAuth.canHandleOpen(url) {
             return TencentOAuth.handleOpen(url)
         }
-        return true
+        return false
     }
     
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -25,6 +25,13 @@ public class AppLifecycleDelegate: ExpoAppDelegateSubscriber {
                 }
             }
         }
-        return true
+        return false
+    }
+    
+    public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if TencentOAuth.canHandleOpen(url) {
+            return TencentOAuth.handleOpen(url)
+        }
+        return false
     }
 }
