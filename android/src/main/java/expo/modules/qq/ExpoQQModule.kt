@@ -30,6 +30,7 @@ class ExpoQQModule : Module() {
     }
 
     var tencent: Tencent? = null
+    var listener: LoginListenerProxy? = null
 
     override fun definition() = ModuleDefinition {
         Name("ExpoQQ")
@@ -40,6 +41,10 @@ class ExpoQQModule : Module() {
 
         OnDestroy {
             moduleInstance = null
+        }
+
+        OnActivityResult { activity, payload ->
+            Tencent.onActivityResultData(payload.requestCode, payload.resultCode, payload.data, listener)
         }
 
         // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
@@ -53,6 +58,7 @@ class ExpoQQModule : Module() {
         AsyncFunction("init") { appId: String, universalLink: String ->
             Tencent.setIsPermissionGranted(true)
             tencent = Tencent.createInstance(appId, appContext.reactContext)
+            listener = LoginListenerProxy()
             if (tencent == null) {
                 throw CodedException("ERR_INIT_FAILED", "Init QQ module failed", null)
             }
@@ -61,7 +67,6 @@ class ExpoQQModule : Module() {
         AsyncFunction("login") { permissions: Array<String>, promise: Promise ->
             if (tencent != null) {
                 val scope = permissions.joinToString(",")
-                val listener = LoginListenerProxy()
                 return@AsyncFunction tencent?.login(appContext.currentActivity, scope, listener)
             } else {
                 throw notRegisteredException
@@ -71,7 +76,6 @@ class ExpoQQModule : Module() {
         AsyncFunction("loginByQRCode") { permissions: Array<String> ->
             if (tencent != null) {
                 val scope = permissions.joinToString(",")
-                val listener = LoginListenerProxy()
                 return@AsyncFunction tencent?.login(
                     appContext.currentActivity,
                     scope,

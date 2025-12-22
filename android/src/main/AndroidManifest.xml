@@ -9,4 +9,11 @@
                 android:screenOrientation="behind"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
+
+     <queries>
+        <package android:name="com.tencent.mobileqq" />
+        <package android:name="com.tencent.tim" />
+        <package android:name="com.tencent.minihd.qq" />
+        <package android:name="com.tencent.qqlite" />
+    </queries>
 </manifest>
