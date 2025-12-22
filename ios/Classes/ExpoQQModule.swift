@@ -45,20 +45,26 @@ public class ExpoQQModule: Module {
                                      delegate: delegateProxy)
         }
         
-        AsyncFunction("login") { (permissions: [String]) in
+        AsyncFunction("login") { (permissions: [String], promise: Promise) in
             if tencentOAuth == nil {
-                throw apiNotRegisteredError
+                promise.reject(apiNotRegisteredError)
+            } else {
+                Task { @MainActor in
+                    let loginResult = self.tencentOAuth?.authorize(permissions)
+                    promise.resolve(loginResult == true ? 0 : -1)
+                }
             }
-            let loginResult = tencentOAuth?.authorize(permissions)
-            return loginResult == true ? 0 : -1
         }
         
-        AsyncFunction("loginByQRCode") { (permissions: [String]) in
+        AsyncFunction("loginByQRCode") { (permissions: [String], promise: Promise) in
             if tencentOAuth == nil {
-                throw apiNotRegisteredError
+                promise.reject(apiNotRegisteredError)
+            } else {
+                Task { @MainActor in
+                    let loginResult = self.tencentOAuth?.authorize(withQRlogin: permissions)
+                    promise.resolve(loginResult == true ? 0 : -1)
+                }
             }
-            let loginResult = tencentOAuth?.authorize(withQRlogin: permissions)
-            return loginResult == true ? 0 : -1
         }
         
         AsyncFunction("getLoginTokenInfo") {
@@ -71,11 +77,14 @@ public class ExpoQQModule: Module {
                     "expirationDate": expirationDate * 1000] as [String: Any?]
         }
         
-        AsyncFunction("sendGetUserInfoReq") {
+        AsyncFunction("sendGetUserInfoReq") { (promise: Promise) in
             if tencentOAuth == nil {
-                throw apiNotRegisteredError
+                promise.reject(apiNotRegisteredError)
+            } else {
+                Task { @MainActor in
+                    promise.resolve(self.tencentOAuth?.getUserInfo() ?? false)
+                }
             }
-            return tencentOAuth?.getUserInfo()
         }
         
         AsyncFunction("sharePlainText") { (text: String, platform: String?) in
@@ -124,7 +133,7 @@ public class ExpoQQModule: Module {
                 throw apiNotRegisteredError
             }
             if let url = options.url {
-                let videoObject = QQApiVideoObject(url: options.url!,
+                let videoObject = QQApiVideoObject(url: url,
                                                    title: options.title,
                                                    description: options.description,
                                                    previewImageURL: options.previewImageURL,
@@ -142,7 +151,7 @@ public class ExpoQQModule: Module {
 
 public class ExpoQQModuleDelegateProxy: NSObject, TencentSessionDelegate {
     public func tencentDidLogin() {
-        var tencentOAuth = ExpoQQModule.moduleInstance?.tencentOAuth
+        let tencentOAuth = ExpoQQModule.moduleInstance?.tencentOAuth
         let expirationDate = tencentOAuth?.expirationDate.timeIntervalSince1970 ?? 0
         ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished",
                                                ["success": true,

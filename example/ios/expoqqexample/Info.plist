@@ -27,6 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
+          <string>tencent123456789</string>
           <string>expo.modules.qq.example</string>
         </array>
       </dict>

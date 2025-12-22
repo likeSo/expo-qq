@@ -21,7 +21,7 @@ export default function App() {
             title="初始化"
             onPress={async () => {
               await ExpoQQ.init(
-                process.env.EXPO_PUBLIC_UNIVERSAL_LINK,
+                process.env.EXPO_PUBLIC_QQ_APP_ID,
                 process.env.EXPO_PUBLIC_UNIVERSAL_LINK
               );
             }}

@@ -4,20 +4,23 @@
 
 > 项目发布初期，建议生产环境谨慎使用，如发现任何问题，可以随时进群交流。
 
-# 安装📦
+## 安装📦
 
 ```sh
 npx expo install expo-qq
 ```
 
-# 配置🔧
+## 配置🔧
 
-在 `app.json` 中配置你的app id，这将用于自动配置安卓清单文件。同时要配置通用链接等信息：
+在 `app.json` 中配置你的app id，这将用于自动配置安卓清单文件。同时要配置通用链接和URL Scheme等信息：
 > 请注意，通用链接并不是在这里写了就生效的，你需要在腾讯后台注册，还需要在你的服务器的.well-known目录下添加`apple-app-site-association`文件，具体可以搜iOS Deep Link看看相关文档。
 
 ```json
 {
   "expo": {
+    "scheme": [
+      "tencent+你的腾讯QQ App ID，如tencent12345"
+    ],
     "ios": {
       "associatedDomains": ["请在这里配置你的通用链接"]
     },
@@ -35,7 +38,7 @@ npx expo install expo-qq
 
 添加了这些配置后，执行`npx expo prebuild`，它会自动帮你配置安卓和iOS项目。
 
-# 使用📱
+## 使用📱
 
 ```ts
 import { useEffect } from 'react';
@@ -64,11 +67,11 @@ export default function App() {
 ```
 
 
-# 联系我📞
+## 联系我📞
 
 本框架积极维护，如有任何问题，欢迎提交issue或者PR。 QQ 群：682911244。
 
-# 线路图🚀
+## 线路图🚀
 
 - [ ] 添加日志功能
 - [ ] 完善Example
