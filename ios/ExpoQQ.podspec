@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
     'CLANG_ENABLE_MODULES' => 'YES',
+    'SWIFT_COMPILATION_MODE' => 'wholemodule'
   }
   s.source_files = "Classes/**/*.{h,m,mm,swift,hpp,cpp}"
   
