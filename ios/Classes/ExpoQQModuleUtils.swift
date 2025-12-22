@@ -14,6 +14,12 @@ struct ExpoQQModuleUtils {
                 if let fileURL = URL(string: string), let data = try? Data(contentsOf: fileURL, options: .mappedIfSafe) {
                     return data
                 }
+                return nil
+            } else if (string.hasPrefix("http")) {
+                if let url = URL(string: string), let data = try? Data(contentsOf: url, options: .mappedIfSafe) {
+                    return data
+                }
+                return nil
             } else {
                 return Data(base64Encoded: string, options: .ignoreUnknownCharacters)
             }

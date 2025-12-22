@@ -33,6 +33,18 @@
     </array>
     <key>CFBundleVersion</key>
     <string>1</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>mqq</string>
+      <string>mqqapi</string>
+      <string>tim</string>
+      <string>mqqopensdknopasteboard</string>
+      <string>mqqopensdknopasteboardios16</string>
+      <string>mqqopensdkapiV2</string>
+      <string>mqqOpensdkSSoLogin</string>
+      <string>mqzone</string>
+      <string>mqqopensdklaunchminiapp</string>
+    </array>
     <key>LSMinimumSystemVersion</key>
     <string>12.0</string>
     <key>LSRequiresIPhoneOS</key>

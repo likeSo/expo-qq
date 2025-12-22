@@ -52,20 +52,12 @@ const withExpoQQ: ConfigPlugin<{ appId: string | null | undefined }> = (
                 data: [
                   {
                     $: {
-                      "android:scheme": appId,
+                      "android:scheme": `tencent${appId}`,
                     },
                   },
                 ],
               },
             ],
-          },
-          {
-            $: {
-              "android:name": "com.tencent.connect.common.AssistActivity",
-              "android:configChanges": "orientation|keyboardHidden|screenSize",
-              "android:screenOrientation": "behind",
-              "android:theme": "@android:style/Theme.Translucent.NoTitleBar",
-            },
           }
         );
       }

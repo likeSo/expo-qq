@@ -40,7 +40,7 @@ declare class ExpoQQModule extends NativeModule<ExpoQQModuleEvents> {
    * @param options 分享图片的选项
    * @returns 分享结果，0 表示成功，其他值表示失败
    */
-  shareContent(options: ShareContentOptions): Promise<number>;
+  shareImage(options: ShareContentOptions): Promise<number>;
 
 }
 

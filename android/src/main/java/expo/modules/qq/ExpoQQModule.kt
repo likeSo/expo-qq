@@ -32,9 +32,6 @@ class ExpoQQModule : Module() {
     var tencent: Tencent? = null
 
     override fun definition() = ModuleDefinition {
-        // Sets the name of the module that JavaScript code will use to refer to the module. Takes a string as an argument.
-        // Can be inferred from module's class name, but it's recommended to set it explicitly for clarity.
-        // The module will be accessible from `requireNativeModule('ExpoQQ')` in JavaScript.
         Name("ExpoQQ")
 
         OnCreate {
@@ -47,14 +44,17 @@ class ExpoQQModule : Module() {
 
         // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
         Constants(
-            "PI" to Math.PI
+            "isQQInstalled" to tencent?.isQQInstalled(appContext.reactContext),
+            "isTIMInstalled" to false
         )
 
-        // Defines event names that the module can send to JavaScript.
         Events("onLoginFinished", "onGetUserInfo", "onShareFinished")
 
         AsyncFunction("init") { appId: String, universalLink: String ->
             tencent = Tencent.createInstance(appId, appContext.reactContext)
+            if (tencent == null) {
+                throw CodedException("ERR_INIT_FAILED", "Init QQ module failed", null)
+            }
         }
 
         AsyncFunction("login") { permissions: Array<String>, promise: Promise ->

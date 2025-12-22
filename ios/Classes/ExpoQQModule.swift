@@ -1,5 +1,7 @@
 import ExpoModulesCore
 
+let apiNotRegisteredError = Exception(name: "NOT_REGISTERED_ERR", description: "Please call init function first!")
+
 public class ExpoQQModule: Module {
     
     var tencentOAuth: TencentOAuth?
@@ -25,7 +27,6 @@ public class ExpoQQModule: Module {
         Events("onLoginFinished", "onGetUserInfo", "onShareFinished")
         
         OnCreate {
-            tencentOAuth = TencentOAuth.sharedInstance()
             delegateProxy = ExpoQQModuleDelegateProxy()
             Self.moduleInstance = self
         }
@@ -37,6 +38,7 @@ public class ExpoQQModule: Module {
         AsyncFunction("init") { (appId: String, universalLink: String?) in
             let enableUniveralLink = universalLink != nil && !universalLink!.isEmpty
             TencentOAuth.setIsUserAgreedAuthorization(true)
+            tencentOAuth = TencentOAuth.sharedInstance()
             tencentOAuth?.setupAppId(appId,
                                      enableUniveralLink: enableUniveralLink,
                                      universalLink: universalLink,
@@ -44,16 +46,25 @@ public class ExpoQQModule: Module {
         }
         
         AsyncFunction("login") { (permissions: [String]) in
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             let loginResult = tencentOAuth?.authorize(permissions)
             return loginResult == true ? 0 : -1
         }
         
         AsyncFunction("loginByQRCode") { (permissions: [String]) in
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             let loginResult = tencentOAuth?.authorize(withQRlogin: permissions)
             return loginResult == true ? 0 : -1
         }
         
         AsyncFunction("getLoginTokenInfo") {
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             let expirationDate = tencentOAuth?.expirationDate.timeIntervalSince1970 ?? 0
             return ["openId": tencentOAuth?.openId,
                     "accessToken": tencentOAuth?.accessToken,
@@ -61,10 +72,16 @@ public class ExpoQQModule: Module {
         }
         
         AsyncFunction("sendGetUserInfoReq") {
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             return tencentOAuth?.getUserInfo()
         }
         
         AsyncFunction("sharePlainText") { (text: String, platform: String?) in
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             let textObject = QQApiTextObject(text: text)
             let req = SendMessageToQQReq(content: textObject)
             
@@ -72,6 +89,9 @@ public class ExpoQQModule: Module {
         }
         
         AsyncFunction("shareImage") { (options: ShareContentOptions) in
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             if let mainImage = ExpoQQModuleUtils.getImageDataFromBase64OrUri(options.imageBase64OrImageUri),
                let compressedImage = ImageCompressUtils.compressImageData(mainImage, toTargetKB: 1024 * 5) {
                 var previewImage = ExpoQQModuleUtils.getImageDataFromBase64OrUri(options.previewImageBase64OrImageUri)
@@ -100,6 +120,9 @@ public class ExpoQQModule: Module {
         }
         
         AsyncFunction("shareVideo") { (options: ShareVideoOptions) in
+            if tencentOAuth == nil {
+                throw apiNotRegisteredError
+            }
             if let url = options.url {
                 let videoObject = QQApiVideoObject(url: options.url!,
                                                    title: options.title,
@@ -133,7 +156,7 @@ public class ExpoQQModuleDelegateProxy: NSObject, TencentSessionDelegate {
     }
     
     public func tencentDidNotNetWork() {
-        ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished", ["success": true])
+        ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished", ["success": false])
     }
     
     
