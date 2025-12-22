@@ -51,6 +51,7 @@ class ExpoQQModule : Module() {
         Events("onLoginFinished", "onGetUserInfo", "onShareFinished")
 
         AsyncFunction("init") { appId: String, universalLink: String ->
+            Tencent.setIsPermissionGranted(true)
             tencent = Tencent.createInstance(appId, appContext.reactContext)
             if (tencent == null) {
                 throw CodedException("ERR_INIT_FAILED", "Init QQ module failed", null)
