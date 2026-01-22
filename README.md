@@ -65,6 +65,71 @@ export default function App() {
 
 ```
 
+### API
+
+#### init
+
+```ts
+init(appId: string, universalLink: string | null): Promise<void>
+```
+
+初始化QQ SDK。
+
+- **appId**: QQ 应用 ID
+- **universalLink**: 应用的 Universal Link
+
+#### login
+
+```ts
+login(permissions: LoginPermissions[]): Promise<number>
+```
+
+登录QQ。
+
+- **permissions**: 所需权限，尽量只传入所需要的权限
+- **返回值**: 接口调用结果。0正常，-1异常。安卓：1使用activity登陆，2使用网页登陆，或者显示下载页面。
+
+#### loginByQRCode
+
+```ts
+loginByQRCode(permissions: LoginPermissions[]): Promise<number>
+```
+
+二维码登录，该方法会唤起网页端的登录流程。
+
+- **permissions**: 所需权限，尽量只传入所需要的权限
+- **返回值**: 接口调用结果。0正常，-1异常。安卓：1使用activity登陆，2使用网页登陆，或者显示下载页面。
+
+#### getLoginTokenInfo
+
+```ts
+getLoginTokenInfo(): Promise<LoginAccessTokenInfo>
+```
+
+获取登录凭证（Token）信息，此方法需要在登录成功后调用。
+
+- **返回值**: 登录凭证（Token）信息
+
+#### sendGetUserInfoReq
+
+```ts
+sendGetUserInfoReq(): Promise<boolean>
+```
+
+发送获取用户信息请求，此方法需要在登录成功后调用。
+
+- **返回值**: 接口调用是否成功，如需用户信息回调，请通过事件监听。
+
+#### shareImage
+
+```ts
+shareImage(options: ShareContentOptions): Promise<number>
+```
+
+分享图文消息到QQ。主图片大小限制5MB，预览图限制1MB，如果超过，会进行压缩。
+
+- **options**: 分享图片的选项
+- **返回值**: 分享结果，0 表示成功，其他值表示失败
 
 ### 常见问题❓
 
