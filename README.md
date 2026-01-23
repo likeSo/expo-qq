@@ -1,6 +1,6 @@
 # expo-qq
 
-这是QQ开放平台，Tencent Open API的React Native封装，支持所有QQ开放平台的功能。基于TypeScript和最新的Expo Module Api实现，全类型提示支持。
+这是QQ开放平台，Tencent Open API的React Native封装，支持所有QQ开放平台的功能。基于TypeScript和最新的Expo Module Api实现，全类型提示支持，支持Config Plugin配置，省去了繁琐的配置流程。
 
 
 ### 安装📦
@@ -47,6 +47,7 @@ import ExpoQQ from 'expo-qq';
 export default function App() {
   /// 监听登录结果，你也可以使用ExpoQQ.addListener('onLoginFinished', callback)来实现，但请不要忘记移除监听
   const onLoginFinished = useEvent(ExpoQQ, 'onLoginFinished');
+  /// 在登录成功后，onLoginFinished会包含id和token等信息，可以查看LoginAccessTokenInfo类型获取详细信息
 
   /// 国内应用需要在用户接受隐私协议后再初始化
   useEffect(() => {

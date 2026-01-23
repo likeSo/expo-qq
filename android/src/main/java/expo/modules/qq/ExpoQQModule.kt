@@ -3,8 +3,6 @@ package expo.modules.qq
 import androidx.core.os.bundleOf
 import com.tencent.connect.UserInfo
 import com.tencent.connect.share.QQShare
-import com.tencent.open.utils.HttpUtils
-import com.tencent.tauth.IRequestListener
 import com.tencent.tauth.IUiListener
 import com.tencent.tauth.Tencent
 import com.tencent.tauth.UiError
@@ -14,11 +12,6 @@ import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
-import java.lang.Exception
-import java.net.MalformedURLException
-import java.net.SocketTimeoutException
-import java.net.URL
 
 val notRegisteredException =
     CodedException("NOT_REGISTERED_ERR", "Please call init function first!", null)
@@ -47,7 +40,6 @@ class ExpoQQModule : Module() {
             Tencent.onActivityResultData(payload.requestCode, payload.resultCode, payload.data, listener)
         }
 
-        // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
         Constants(
             "isQQInstalled" to tencent?.isQQInstalled(appContext.reactContext),
             "isTIMInstalled" to false
@@ -102,7 +94,7 @@ class ExpoQQModule : Module() {
 
         AsyncFunction("sendGetUserInfoReq") {
             if (tencent != null) {
-                if (tencent!!.isSessionValid) {
+                if (tencent!!.isReady) {
                     val userInfo = UserInfo(appContext.reactContext, tencent!!.qqToken)
 
                     userInfo.getUserInfo(object : IUiListener {
@@ -191,7 +183,19 @@ class LoginListenerProxy : IUiListener {
         if (p0 is JSONObject) {
             val camelCaseMap = convertJsonKeysToCamelCase(p0).toMutableMap()
             camelCaseMap["success"] = true
-            ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished", camelCaseMap)
+
+            try {
+                val openId: String? = p0.getString("openid")
+                val accessToken: String? = p0.getString("access_token")
+                val expiresIn: String? = p0.getString("expires_in")
+
+                ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished", camelCaseMap)
+                ExpoQQModule.moduleInstance?.tencent?.openId = openId
+                ExpoQQModule.moduleInstance?.tencent?.setAccessToken(accessToken, expiresIn)
+            } catch (e: JSONException) {
+                camelCaseMap["parseOpenIDFailedReason"] = e.localizedMessage
+                ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished", camelCaseMap)
+            }
         }
     }
 

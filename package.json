@@ -1,7 +1,7 @@
 {
   "name": "expo-qq",
-  "version": "0.1.5",
-  "description": "腾讯开放平台Tencent Open API框架的React Native插件版本。可用于实现QQ登录和分享等功能。全自动配置，省去了繁琐的配置流程。",
+  "version": "0.1.6",
+  "description": "这是QQ开放平台，Tencent Open API的React Native封装，支持所有QQ开放平台的功能。基于TypeScript和最新的Expo Module Api实现，全类型提示支持，支持Config Plugin配置，省去了繁琐的配置流程。",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
