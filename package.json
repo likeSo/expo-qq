@@ -1,6 +1,6 @@
 {
   "name": "expo-qq",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "这是QQ开放平台，Tencent Open API的React Native封装，支持所有QQ开放平台的功能。基于TypeScript和最新的Expo Module Api实现，全类型提示支持，支持Config Plugin配置，省去了繁琐的配置流程。",
   "main": "build/index.js",
   "types": "build/index.d.ts",

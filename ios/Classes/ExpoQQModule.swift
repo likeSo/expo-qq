@@ -71,7 +71,7 @@ public class ExpoQQModule: Module {
             if tencentOAuth == nil {
                 throw apiNotRegisteredError
             }
-            let expirationDate = tencentOAuth?.expirationDate.timeIntervalSince1970 ?? 0
+            let expirationDate = tencentOAuth?.expirationDate?.timeIntervalSince1970 ?? 0
             return ["openId": tencentOAuth?.openId,
                     "accessToken": tencentOAuth?.accessToken,
                     "expirationDate": expirationDate * 1000] as [String: Any?]
@@ -152,7 +152,7 @@ public class ExpoQQModule: Module {
 public class ExpoQQModuleDelegateProxy: NSObject, TencentSessionDelegate {
     public func tencentDidLogin() {
         let tencentOAuth = ExpoQQModule.moduleInstance?.tencentOAuth
-        let expirationDate = tencentOAuth?.expirationDate.timeIntervalSince1970 ?? 0
+        let expirationDate = tencentOAuth?.expirationDate?.timeIntervalSince1970 ?? 0
         ExpoQQModule.moduleInstance?.sendEvent("onLoginFinished",
                                                ["success": true,
                                                 "openId": tencentOAuth?.openId,
