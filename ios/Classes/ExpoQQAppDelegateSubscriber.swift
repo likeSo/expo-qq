@@ -1,22 +1,19 @@
 //
-//  AppLifecycleDelegate.swift
+//  ExpoQQAppDelegateSubscriber.swift
 //  ExpoQQ
-//
-//  Created by Aron on 2025/7/28.
 //
 
 import Foundation
 import ExpoModulesCore
 
-
-public class AppLifecycleDelegate: ExpoAppDelegateSubscriber {
+public class ExpoQQAppDelegateSubscriber: ExpoAppDelegateSubscriber {
     public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if TencentOAuth.canHandleOpen(url) {
             return TencentOAuth.handleOpen(url)
         }
         return false
     }
-    
+
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             if let url = userActivity.webpageURL {
@@ -27,7 +24,7 @@ public class AppLifecycleDelegate: ExpoAppDelegateSubscriber {
         }
         return false
     }
-    
+
     public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if TencentOAuth.canHandleOpen(url) {
             return TencentOAuth.handleOpen(url)

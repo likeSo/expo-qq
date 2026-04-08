@@ -2,7 +2,7 @@
   "platforms": ["apple", "android", "web"],
   "apple": {
     "modules": ["ExpoQQModule"],
-    "appDelegateSubscribers": ["AppLifecycleDelegate"]
+    "appDelegateSubscribers": ["ExpoQQAppDelegateSubscriber"]
   },
   "android": {
     "modules": ["expo.modules.qq.ExpoQQModule"]
