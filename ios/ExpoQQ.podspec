@@ -19,17 +19,6 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
-  
-#  s.vendored_frameworks = 'Frameworks/*.framework'
-#  s.frameworks = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony'
-#  s.libraries = 'iconv', 'sqlite3', 'stdc++', 'z'
-#  
-#  s.pod_target_xcconfig = {
-#    'HEADER_SEARCH_PATHS' => '"$(inherited)" "${PODS_TARGET_SRCROOT}/Frameworks/TencentOpenAPI.framework/Headers"',
-#    'FRAMEWORK_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}/Frameworks"',
-#    'DEFINES_MODULE' => 'YES',
-#    'CLANG_ENABLE_MODULES' => 'YES',
-#  }
 
   s.vendored_frameworks = 'Frameworks/*.xcframework'
   s.frameworks = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony'

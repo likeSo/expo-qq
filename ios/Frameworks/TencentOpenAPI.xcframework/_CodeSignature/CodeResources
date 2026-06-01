@@ -4,74 +4,74 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
 		<data>
 		NyClSJF5AkbzsaKwZiYthWwFtEQ=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
 		<data>
 		gGvGGJpjkKChFdTHG4JCYcZFU4Q=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
 		<data>
-		bR/sIFOcBRXlm/PPqkV9E5cBGW0=
+		esGx2t1F+90ifcIvwQVGW3Q9gRs=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/SDKDef.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/SDKDef.h</key>
 		<data>
 		pNuALDKV3dBaHRTHj87Ha0FRn2M=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
 		<data>
 		qY4CtCUAIMH/VEBpkqo8h+uRhy8=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
 		<data>
 		qGEWrIy0/CmpJkMMCxSd9xQoDh0=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
+		<key>ios-arm64/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
 		<data>
 		6PyG/Sn5jh81qqGDYJ701GSxHBw=
 		</data>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/TencentOpenAPI</key>
+		<key>ios-arm64/TencentOpenAPI.framework/TencentOpenAPI</key>
 		<data>
-		hwZr4TBp0bAfB+3a/wxqYvQnP54=
+		S6ebaA9hhSM2f25QThV1HKkHWNg=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
 		<data>
 		NyClSJF5AkbzsaKwZiYthWwFtEQ=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
 		<data>
 		gGvGGJpjkKChFdTHG4JCYcZFU4Q=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
 		<data>
-		bR/sIFOcBRXlm/PPqkV9E5cBGW0=
+		esGx2t1F+90ifcIvwQVGW3Q9gRs=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/SDKDef.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/SDKDef.h</key>
 		<data>
 		pNuALDKV3dBaHRTHj87Ha0FRn2M=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
 		<data>
 		qY4CtCUAIMH/VEBpkqo8h+uRhy8=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
 		<data>
 		qGEWrIy0/CmpJkMMCxSd9xQoDh0=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
 		<data>
 		6PyG/Sn5jh81qqGDYJ701GSxHBw=
 		</data>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/TencentOpenAPI</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/TencentOpenAPI</key>
 		<data>
-		5b4OjqkA8HFN7eQZhAhPMIqTOM0=
+		xe3BXV5y8kKmJVhk70f0UWcsnXA=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -82,7 +82,7 @@
 			foQZVVDy5Y31H0ExXBx9x0xFKY8cAS8r03UUsRf4BiE=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -93,18 +93,18 @@
 			MxO8YQDQsllAe5FE7OhaoXJ0m7es4H7C/BX/1bwH/aM=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bR/sIFOcBRXlm/PPqkV9E5cBGW0=
+			esGx2t1F+90ifcIvwQVGW3Q9gRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			3anKz8DaNOJRnDNgPEW2oyacBhq9160MiwLe8VQ5r9Q=
+			zaU96f0KPDIQOvvSCFZI0o7rVNdHm8+lTtxuWq103VU=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/SDKDef.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/SDKDef.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -115,7 +115,7 @@
 			GqM+994bCqOt7Y0BeiHKE53NauFkYQkGums/PGAPcyo=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -126,7 +126,7 @@
 			xT3XtPEo90J7djfYWyf/8z0YS2IzECDHUGqfpQUYM9g=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
+		<key>ios-arm64/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -137,7 +137,7 @@
 			/WKoVcUHfNNJlwWXqATrmrg8erC1ZXQ33PY6t7yp7o0=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
+		<key>ios-arm64/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -148,18 +148,18 @@
 			3I1+H5p9p/M4HzB0a1kgbuYs4iW2n+O8u2YjT4RZvjU=
 			</data>
 		</dict>
-		<key>ios-arm64_armv7/TencentOpenAPI.framework/TencentOpenAPI</key>
+		<key>ios-arm64/TencentOpenAPI.framework/TencentOpenAPI</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hwZr4TBp0bAfB+3a/wxqYvQnP54=
+			S6ebaA9hhSM2f25QThV1HKkHWNg=
 			</data>
 			<key>hash2</key>
 			<data>
-			CV9em+Sff62NhSY4dIpwKAgyECiXmg0cf0GUOSsnjfw=
+			RJHSk3XdhAKaY6nDybNOHLXKer8iyrpeT28rybqlbJA=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -170,7 +170,7 @@
 			foQZVVDy5Y31H0ExXBx9x0xFKY8cAS8r03UUsRf4BiE=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterface.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -181,18 +181,18 @@
 			MxO8YQDQsllAe5FE7OhaoXJ0m7es4H7C/BX/1bwH/aM=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bR/sIFOcBRXlm/PPqkV9E5cBGW0=
+			esGx2t1F+90ifcIvwQVGW3Q9gRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			3anKz8DaNOJRnDNgPEW2oyacBhq9160MiwLe8VQ5r9Q=
+			zaU96f0KPDIQOvvSCFZI0o7rVNdHm8+lTtxuWq103VU=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/SDKDef.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/SDKDef.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -203,7 +203,7 @@
 			GqM+994bCqOt7Y0BeiHKE53NauFkYQkGums/PGAPcyo=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOAuth.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -214,7 +214,7 @@
 			xT3XtPEo90J7djfYWyf/8z0YS2IzECDHUGqfpQUYM9g=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -225,7 +225,7 @@
 			/WKoVcUHfNNJlwWXqATrmrg8erC1ZXQ33PY6t7yp7o0=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -236,15 +236,15 @@
 			3I1+H5p9p/M4HzB0a1kgbuYs4iW2n+O8u2YjT4RZvjU=
 			</data>
 		</dict>
-		<key>ios-arm64_i386_x86_64-simulator/TencentOpenAPI.framework/TencentOpenAPI</key>
+		<key>ios-arm64_x86_64-simulator/TencentOpenAPI.framework/TencentOpenAPI</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5b4OjqkA8HFN7eQZhAhPMIqTOM0=
+			xe3BXV5y8kKmJVhk70f0UWcsnXA=
 			</data>
 			<key>hash2</key>
 			<data>
-			h4Yc87zI0q6Z05wruDfagvtxP8/rjLEsPzbdvw61Edk=
+			qHxCwI+SugPTMBL2qXvG2ClX38bkhXoUko1eQmJ4V6k=
 			</data>
 		</dict>
 	</dict>
